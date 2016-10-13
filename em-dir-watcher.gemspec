@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{em-dir-watcher}
-  s.version = "0.9.5"
+  s.version = "0.9.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Andrey Tarantsov", "Mikhail Gusarov"]
-  s.date = %q{2015-09-25}
+  s.authors = ["Andrey Tarantsov", "Mikhail Gusarov", "John W Higgins"]
+  s.date = %q{2016-10-13}
   s.description = %q{Directory watching support for EventMachine (fssm / win32-changenotify)}
   s.email = %q{andreyvit@gmail.com}
   s.extra_rdoc_files = [
