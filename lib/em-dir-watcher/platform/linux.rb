@@ -5,13 +5,22 @@ module Platform
 module Linux
 
 class Watcher
+  @@events = [:recursive, :attrib, :modify, :create,
+              :delete, :delete_self, :moved_from, :moved_to,
+              :move_self]
+
+  def self.events
+    @@events
+  end
+
+  def self.events=(events)
+    @@events = events
+  end
 
   def initialize path, inclusions, exclusions
     @notifier = INotify::Notifier.new
 
-    @notifier.watch(path, :recursive, :attrib, :modify, :create,
-                    :delete, :delete_self, :moved_from, :moved_to,
-                    :move_self) do |event|
+    @notifier.watch(path, *Watcher.events) do |event|
       yield event.absolute_name
     end
 
